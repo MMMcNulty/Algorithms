@@ -6,21 +6,24 @@
 
 var mostFrequentChar = function(string, char) {
     stringDict = {};
-    for(i=0; i<string.length; i++)
+    for(var i=0; i<string.length; i++)
     {
         if(!stringDict.hasOwnProperty(string[i]))
         {
-            stringDict.put(string[i], 1);
+            console.log("entering " + string[i] + " into the dictionary");
+            stringDict[string[i]] = 1;
         }
         else
         {
-            stringDict[key]++;
+            stringDict[string[i]]++;
+            console.log("adding " + string[i] + " and" + stringDict[string[i]] + " to my key value");
         }
     }
     var charValue = stringDict[char];
-    for(i=o; i<stringDict.length; i++)
+    for(key in stringDict)
     {
-        if(stringDict[i] > charValue)
+        console.log("running");
+        if(stringDict[key] > charValue)
         {
             return false;
         }
@@ -31,3 +34,4 @@ var mostFrequentChar = function(string, char) {
 
 
 console.log(mostFrequentChar("abbaccad", 'a'));
+console.log(mostFrequentChar("abbbbaccad", 'a'));
