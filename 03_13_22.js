@@ -30,29 +30,22 @@ function readLine() {
  */
 
 function timeConversion(s) {
-    let stringArr = []
-    let hours = 0
     let newString = ""
+    let stringArr = s.split(":");
+    let hours = parseInt(stringArr[0]);
+    let seconds = parseInt(stringArr[2])
     if(s.includes("PM")){
-        stringArr = s.split(":");
-        hours = parseInt(stringArr[0]);
-        seconds = parseInt(stringArr[2])
         if(hours != 12){
             hours += 12;
         }
-        newString = hours.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + ":" + stringArr[1] + ":" + seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
-        return newString;
     }
     if(s.includes("AM")){
-        stringArr = s.split(":");
-        hours = parseInt(stringArr[0]);
-        seconds = parseInt(stringArr[2])
         if(hours == 12){
             hours -= 12;
         }
-        newString = hours.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + ":" + stringArr[1] + ":" + seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
-        return newString;
     }
+    newString = hours.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + ":" + stringArr[1] + ":" + seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
+    return newString;
 
 }
 
@@ -70,29 +63,22 @@ function main() {
 
 
 function stringConverter(s) {
-    let stringArr = []
-    let hours = 0
     let newString = ""
+    let stringArr = s.split(":");
+    let hours = parseInt(stringArr[0]);
+    let seconds = parseInt(stringArr[2])
     if(s.includes("PM")){
-        stringArr = s.split(":");
-        hours = parseInt(stringArr[0]);
-        seconds = parseInt(stringArr[2])
         if(hours != 12){
             hours += 12;
         }
-        newString = hours.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + ":" + stringArr[1] + ":" + seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
-        return newString;
     }
     if(s.includes("AM")){
-        stringArr = s.split(":");
-        hours = parseInt(stringArr[0]);
-        seconds = parseInt(stringArr[2])
         if(hours == 12){
             hours -= 12;
         }
-        newString = hours.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + ":" + stringArr[1] + ":" + seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
-        return newString;
     }
+    newString = hours.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + ":" + stringArr[1] + ":" + seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
+    return newString;
 
 }
 
