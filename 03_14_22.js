@@ -34,12 +34,8 @@ function readLine() {
 function findMedian(arr) {
     let median = null;
     arr.sort();
-    if(arr.length % 2){
-        median = Math.floor(arr.length/2)
-    }
-    else {
-        median = arr.length/2
-    }
+    console.log(`length is: ${arr.length}`)
+    median = Math.floor(arr.length/2)
     console.log(`the sorted array is ${arr}`)
     console.log(`the median index is ${median}`)
     return arr[median]
