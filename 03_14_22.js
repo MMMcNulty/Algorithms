@@ -32,12 +32,14 @@ function readLine() {
  */
 
 function findMedian(arr) {
-    let median = null;
-    arr.sort();
+    let median = 0;
+    arr.sort((a, b) => a - b);
     console.log(`length is: ${arr.length}`)
-    median = Math.floor(arr.length/2)
+    median = (arr.length -1) / 2;
     console.log(`the sorted array is ${arr}`)
     console.log(`the median index is ${median}`)
+    console.log(`the median value is ${arr[median]}`)
+
     return arr[median]
 
 }
