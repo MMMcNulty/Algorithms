@@ -10,11 +10,13 @@ function palindromeIndex(s) {
             let newStr = s.split('');
             newStr.splice(i,1);
             newStr = newStr.join('');
+            console.log("string to check: " + newStr)
             if(isPalindrome(newStr))
             {
                 return i;
             }
         }
+        return -1;
     }
 
 }
@@ -24,6 +26,9 @@ function isPalindrome(s) {
     let mid = 0;
     let left = 0;
     let right = 0;
+    if(s.length <= 1) {
+        palindrome = false;
+    }
     if (s.length % 2)
     {
         mid = Math.floor(s.length/2);
@@ -58,7 +63,7 @@ function isPalindrome(s) {
 // console.log(isPalindrome("baabb"));
 // console.log(isPalindrome("abba"));
 // console.log(isPalindrome("aaaa"));
-console.log(palindromeIndex("bacb"));
-console.log(palindromeIndex("baa"));
-console.log(palindromeIndex("aaa"));
-console.log(palindromeIndex("aaaba"));
+//console.log(palindromeIndex("bacb"));
+//console.log(palindromeIndex("baa"));
+//console.log(palindromeIndex("aaa"));
+console.log(palindromeIndex("naanc"));
